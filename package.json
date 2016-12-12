@@ -1,6 +1,6 @@
 {
   "name": "swagger-editor-electron",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Swagger Editor in Electron",
   "keywords": [
     "swagger",
@@ -20,17 +20,20 @@
     "start": "./node_modules/.bin/electron .",
     "lint": "node node_modules/eslint/bin/eslint.js lib/**",
     "package-darwin": "electron-packager . \"$npm_package_electronName\" --overwrite --platform=darwin --arch=x64 --version=$npm_package_electronVersion --out='/Applications' --asar=true",
-    "package-win32": "electron-packager . \"Swagger Editor\" --overwrite --platform=win32 --arch=x64 --version=0.37.2 --asar=true"
+    "package-win32": "electron-packager . \"Swagger Editor $npm_package_version\" --overwrite --platform=win32 --arch=x64 --version=0.37.2 --asar=true",
+    "package-linux": "electron-packager . \"SwaggerEditor_$npm_package_version\" --overwrite --platform=linux --arch=x64 --version=0.37.2 --asar=true"
   },
   "dependencies": {
-    "swagger-editor-serve": "1.0.4",
+    "swagger-editor-serve": "1.0.5",
     "swagger-editor": "2.9.8"
   },
   "devDependencies": {
     "electron-prebuilt": "0.37.2",
     "electron-packager" : "5.2.1",
     "eslint": "2.3.0",
-    "eslint-config-airbnb": "6.1.0"
+    "eslint-config-airbnb": "6.1.0",
+	"eslint-plugin-react": "4.0.0"
+
   },
   "license": "MIT"
 }
